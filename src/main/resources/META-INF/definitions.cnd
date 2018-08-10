@@ -1,0 +1,37 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+<mynt = 'http://www.obelhadi.com/mynt'>
+<omix = 'http://www.obelhadi.com/omix'>
+
+    [mynt:booking] > jnt:content
+        - email (string)
+        - comment (string)
+        - date (date, datepicker)
+
+    [mynt:car] > jnt:content, omix:carComponent, mix:title
+    - maker (string, choicelist[carMakerList]) mandatory
+    - model (string) mandatory
+    - body (string)
+    - exterior (string)
+    - interior (string)
+    - engine (string)
+    - energy (string, choicelist[resourceBundle]) < 'gasoline', 'diesel', 'electric'
+    - doors (long)
+    - transmission (string)
+    - kms (long) < '[1,]'
+    - year(date, datepicker) < '[1890-01-01T00:00:00.000+00:00,]'
+    - price (double)
+    - photos (weakreference, picker[type='image']) multiple
+    + * (mynt:booking)
+
+
+
+
+    [mynt:brandList] > jnt:content, omix:carComponent, mix:title
+
+    [mynt:latestCars] > jnt:content, omix:carComponent, mix:title
+
+    [mynt:searchCars] > jnt:content, omix:carComponent, mix:title
+
+    [omix:carComponent] > jmix:droppableContent mixin

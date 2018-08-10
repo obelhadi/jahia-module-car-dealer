@@ -1,0 +1,24 @@
+package org.jahia.modules.cardealer.rules
+
+// list any import classes here.
+import org.jahia.services.content.rules.*
+import org.jahia.services.content.JCRContentUtils
+import org.slf4j.Logger
+
+expander rules.dsl
+
+// declare any global variables here
+global User user
+global Service service
+global Logger logger
+global JCRContentUtils jcrUtils
+
+rule "Notification about new CAR booking"
+   when
+       A new node is created
+                - the node has the type mynt:booking
+   then
+        Execute the action "carBooking" now on the node
+
+end
+

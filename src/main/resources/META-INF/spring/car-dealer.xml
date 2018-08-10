@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="carMakerList" class="org.jahia.modules.car.initializers.CarMakerListInitializer" >
+       <property name="key" value="carMakerList"/>
+   </bean>
+
+    <bean id="carBooking" class="org.jahia.modules.car.actions.CarBooking" >
+        <property name="name" value="carBooking" />
+        <property name="jcrTemplate" ref="jcrTemplate" />
+        <property name="mailService" ref="MailService" />
+    </bean>
+</beans>

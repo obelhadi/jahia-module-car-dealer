@@ -1,0 +1,9 @@
+
+
+<html>
+<body>
+<p>Hello, </p>
+<p> You have booked a test for a car ${carMaker}  ${carModel} on ${date}</p>
+<p>Regards</p>
+</body>
+</html>
